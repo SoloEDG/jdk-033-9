@@ -5,6 +5,7 @@ import { WindPanel } from '../features/wind'
 import { SailPanel } from '../features/sail'
 import { MarksPanel } from '../features/jury'
 import { LogbookPanel } from '../features/logbook'
+import { SignalDesk } from '../features/signals'
 import { clock } from '../shared/format'
 import { useRace } from './useRace'
 
@@ -21,6 +22,7 @@ const labels = { ready: '待出发', running: '竞速中', paused: '已暂停', 
       <div class="brand"><Anchor :size="30" :stroke-width="1.8"/><div><h1>绕标</h1><span>MARK REGATTA</span></div></div>
       <div class="mast-data"><Flag :size="16"/>{{ course.name }} <span class="divider"></span><span data-testid="race-state">{{ selected ? '回看中' : labels[status] }}</span></div>
     </header>
+    <SignalDesk />
     <div class="workspace">
       <div class="main-column">
         <div class="race-bar">
